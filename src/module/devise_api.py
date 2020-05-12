@@ -10,10 +10,10 @@ def get_rates(currencies):
         return False, False
 
     api_rates = r.json().get("rates")
-    pprint(api_rates)
-    return None, None
+    valeur_rates = api_rates[currencies]
+    return valeur_rates
 
 
 if __name__ == '__main__':
-    get_rates(currencies="USD")
-    get_rates("fr")
+    valeur = get_rates(currencies="USD")
+    print(type(valeur))
