@@ -25,6 +25,6 @@ class CalculManager(object):
 
 if __name__ == '__main__':
     app = CalculManager()
-    print(app.device_ref())
+    print(type(app.device_ref()))
 
     print(app.conversion(valeur_entre=1, devise_entree='CAD'))
