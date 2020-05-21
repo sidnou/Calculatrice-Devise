@@ -19,12 +19,11 @@ class CalculManager(object):
     def conversion(self, valeur_entre=0, devise_entree=None):
         self.deviseEntree = devise_entree
         valeurDeChange = self.deviseRef[self.deviseEntree]
-        resultat = valeur_entre * valeurDeChange
-        return resultat
+        return valeur_entre * valeurDeChange
 
 
 if __name__ == '__main__':
     app = CalculManager()
     print(type(app.device_ref()))
 
-    print(app.conversion(valeur_entre=1, devise_entree='CAD'))
+    print(app.conversion(valeur_entre=1, devise_entree='USD'))

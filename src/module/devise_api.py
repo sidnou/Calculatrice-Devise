@@ -4,13 +4,13 @@ import requests
 
 
 def get_rates(curencies=None):
-    if not curencies is None:
+    if curencies is not None:
         # Récupération du Taux de change par défaut pour 1 Euro
         r = requests.get(f"https://api.exchangeratesapi.io/latest?symbols={curencies}")
         # Teste la reponse de la demande de l'api
-        if not r.status_code == 200:
+        if r.status_code != 200:
             return print("La valeur entrée n'est pas correcte")
-        if not r and not r.json():
+        if not (r or r.json()):
             return False, False
         else:
             api_rates = r.json().get("rates")
@@ -18,15 +18,14 @@ def get_rates(curencies=None):
             return api_rates
     else:
         r = requests.get("https://api.exchangeratesapi.io/latest")
-        if not r and not r.json():
+        if not (r or r.json()):
             return False, False
         api_rates = r.json().get("rates")
         return api_rates
 
 
 def get_rates_base(base="EUR"):
-    rBase = requests.Request("GET",)
-    pass
+    rBase = requests.Request("GET", )
 
 
 #
