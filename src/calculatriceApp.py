@@ -1,5 +1,6 @@
-from PySide2 import QtWidgets, QtCore
+from PySide2 import QtWidgets, QtCore, QtGui
 from gui.CalculatriceDeviseGUI import Ui_Form
+from src.module.calculManager import CalculManagement
 
 
 class FenetrePrincipale(QtWidgets.QWidget, Ui_Form):
@@ -13,6 +14,17 @@ class FenetrePrincipale(QtWidgets.QWidget, Ui_Form):
 
 
 
+
+
+
+
+# Fonction d'action
+
+    def setupConnections(self):
+        print('clique bouton')
+
+    def conversionDevise(self, valeur_entree, devise_entree):
+        CalculManagement.conversion(valeur_entree, devise_entree)
 
 
 app = QtWidgets.QApplication()

@@ -43,5 +43,7 @@ def get_rates_base(base="EUR"):
 if __name__ == '__main__':
     valeur = get_rates()
     pprint(valeur)
+    valeur1 = list(valeur.keys())
+    print(valeur1)
     # varleurCrypto = get_rates_crypto()
     # pprint(varleurCrypto)

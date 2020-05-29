@@ -1,4 +1,4 @@
-import pyside2uic
+from PySide2.scripts.pyside_tool import uic
 import os
 
-pyside2uic.compileUiDir(os.path.dirname(__file__))
+uic()
