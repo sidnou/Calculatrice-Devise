@@ -9,7 +9,7 @@ class FenetrePrincipale(QtWidgets.QWidget, Ui_Form):
 
         self.setupUi(self)
         self.show()
-
+        self.setupConnections()
 
 
 
@@ -22,10 +22,12 @@ class FenetrePrincipale(QtWidgets.QWidget, Ui_Form):
 
     def setupConnections(self):
         print('clique bouton')
+        self.btn_0.clicked.connect(self.teste)
 
     def conversionDevise(self, valeur_entree, devise_entree):
         CalculManagement.conversion(valeur_entree, devise_entree)
-
+    def teste(self):
+        print('tteste')
 
 app = QtWidgets.QApplication()
 fenetre = FenetrePrincipale()
